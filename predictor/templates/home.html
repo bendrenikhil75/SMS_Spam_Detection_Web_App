@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMS Spam Detection</title>
+</head>
+<body>
+    <h1>SMS Spam Detection</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="message" rows="5" cols="50" placeholder="Enter your SMS here"></textarea><br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Result: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
+
+
+
